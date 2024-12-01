@@ -1,0 +1,42 @@
+[
+    {
+        "pk": 1,
+        "model": "v1.categories",
+        "fields": { "categories_name": "Information" }
+    },
+    {
+        "pk": 2,
+        "model": "v1.categories",
+        "fields": { "categories_name": "Publication" }
+    },
+    {
+        "pk": 3,
+        "model": "v1.categories",
+        "fields": { "categories_name": "Technology" }
+    },
+    {
+        "pk": 4,
+        "model": "v1.categories",
+        "fields": { "categories_name": "Story" }
+    },
+    {
+        "pk": 5,
+        "model": "v1.categories",
+        "fields": { "categories_name": "Education" }
+    },
+    {
+        "pk": 6,
+        "model": "v1.categories",
+        "fields": { "categories_name": "Religion" }
+    },
+    {
+        "pk": 7,
+        "model": "v1.categories",
+        "fields": { "categories_name": "Health" }
+    },
+    {
+        "pk": 8,
+        "model": "v1.categories",
+        "fields": { "categories_name": "Business & Investment" }
+    }
+]

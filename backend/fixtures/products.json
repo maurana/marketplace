@@ -1,0 +1,362 @@
+[
+    {
+        "pk": 1,
+        "model": "v1.products",
+        "fields": { 
+            "products_name": "Indonesia Dalam Rekayasa Kehidupan",
+            "products_price": 76227,
+            "products_stock": 5000,
+            "products_desc": "Sebuah perenungan anak bangsa menghadapi Globalisasi",
+            "products_image": "products_image/IMG_20241128_041024.jpg",
+            "categories_id": 1
+        }
+    },
+    {
+        "pk": 2,
+        "model": "v1.products",
+        "fields": { 
+            "products_name": "Rich Dad Poor Dad",
+            "products_price": 68000,
+            "products_stock": 5000,
+            "products_desc": "Membahas tentang pentingnya pemahaman keuangan dan membuat keputusan keuangan yang bijak",
+            "products_image": "products_image/IMG_20241128_041115.jpg",
+            "categories_id": 8
+        }
+    },
+    {
+        "pk": 3,
+        "model": "v1.products",
+        "fields": { 
+            "products_name": "The Nature Of Technology",
+            "products_price": 301447.23,
+            "products_stock": 5000,
+            "products_desc": "More than anything else technology creates our world",
+            "products_image": "products_image/IMG_20241128_041147.jpg",
+            "categories_id": 3
+        }
+    },
+    {
+        "pk": 4,
+        "model": "v1.products",
+        "fields": { 
+            "products_name": "Fundamentals Of Software Engineering",
+            "products_price": 554796.25,
+            "products_stock": 5000,
+            "products_desc": "Designed to provide an insight into the software engineering concepts",
+            "products_image": "products_image/IMG_20241128_041244.jpg",
+            "categories_id": 5
+        }
+    },
+    {
+        "pk": 5,
+        "model": "v1.products",
+        "fields": { 
+            "products_name": "Bitcoin And Cryptocurrency Technologies",
+            "products_price": 571146.47,
+            "products_stock": 5000,
+            "products_desc": "An authoritative introduction to the exciting new technologies of digital money",
+            "products_image": "products_image/IMG_20241128_041414.jpg",
+            "categories_id": 3
+        }
+    },
+    {
+        "pk": 6,
+        "model": "v1.products",
+        "fields": { 
+            "products_name": "Programming Fundamentals",
+            "products_price": 777825.93,
+            "products_stock": 5000,
+            "products_desc": "A modular structured approach using C++",
+            "products_image": "products_image/IMG_20241128_041450.jpg",
+            "categories_id": 5
+        }
+    },
+    {
+        "pk": 7,
+        "model": "v1.products",
+        "fields": { 
+            "products_name": "Good Health In The 21st Century",
+            "products_price": 322559.65,
+            "products_stock": 5000,
+            "products_desc": "A family doctor's unconventional guide",
+            "products_image": "products_image/IMG_20241128_041544.jpg",
+            "categories_id": 7
+        }
+    },
+    {
+        "pk": 8,
+        "model": "v1.products",
+        "fields": { 
+            "products_name": "Covid 19: The Great Reset",
+            "products_price": 317321.23,
+            "products_stock": 5000,
+            "products_desc": "A guide for anyone who wants to understand how COVID-19 disrupted our social and economic systems, and what changes will be needed to create a more inclusive, resilient and sustainable world going forward",
+            "products_image": "products_image/IMG_20241128_041656.jpg",
+            "categories_id": 2
+        }
+    },
+    {
+        "pk": 9,
+        "model": "v1.products",
+        "fields": { 
+            "products_name": "Encyclopedia Of Artificial Intelligence",
+            "products_price": 1698517.84,
+            "products_stock": 5000,
+            "products_desc": "The past, present and future of AI",
+            "products_image": "products_image/IMG_20241128_041810.jpg",
+            "categories_id": 3
+        }
+    },
+    {
+        "pk": 10,
+        "model": "v1.products",
+        "fields": { 
+            "products_name": "The Lean Startup",
+            "products_price": 257000.04,
+            "products_stock": 5000,
+            "products_desc": "Most startups fail, but many of those failures are preventable",
+            "products_image": "products_image/IMG_20241128_041910.jpg",
+            "categories_id": 8
+        }
+    },
+    {
+        "pk": 11,
+        "model": "v1.products",
+        "fields": { 
+            "products_name": "Think And Grow Rich",
+            "products_price": 271981,
+            "products_stock": 5000,
+            "products_desc": "Karya klasik yang menawarkan kebijaksanaan untuk pertumbuhan pribadi dan kelimpahan finansial",
+            "products_image": "products_image/IMG_20241128_042023.jpg",
+            "categories_id": 8
+        }
+    },
+    {
+        "pk": 12,
+        "model": "v1.products",
+        "fields": { 
+            "products_name": "The Intelligent Investor",
+            "products_price": 396000,
+            "products_stock": 5000,
+            "products_desc": "The definitive book on value investing",
+            "products_image": "products_image/IMG_20241128_042048.jpg",
+            "categories_id": 8
+        }
+    },
+    {
+        "pk": 13,
+        "model": "v1.products",
+        "fields": { 
+            "products_name": "Al Quran",
+            "products_price": 999999,
+            "products_stock": 5000,
+            "products_desc": "Kitab suci agama Islam",
+            "products_image": "products_image/IMG_20241128_043605.jpg",
+            "categories_id": 6
+        }
+    },
+    {
+        "pk": 14,
+        "model": "v1.products",
+        "fields": { 
+            "products_name": "Bible",
+            "products_price": 888888,
+            "products_stock": 5000,
+            "products_desc": "Kitab suci agama Kristen",
+            "products_image": "products_image/IMG_20241128_043654.jpg",
+            "categories_id": 6
+        }
+    },
+    {
+        "pk": 15,
+        "model": "v1.products",
+        "fields": { 
+            "products_name": "Taurat",
+            "products_price": 777777,
+            "products_stock": 5000,
+            "products_desc": "Kitab suci agama Yahudi",
+            "products_image": "products_image/IMG_20241128_043749.jpg",
+            "categories_id": 6
+        }
+    },
+    {
+        "pk": 16,
+        "model": "v1.products",
+        "fields": { 
+            "products_name": "Harry Potter And The Deathly Hallows",
+            "products_price": 317479.97,
+            "products_stock": 5000,
+            "products_desc": "Novel yang mengisahkan tentang pencarian Harry Potter untuk menghancurkan Horcrux, imortalitas Lord Voldemort",
+            "products_image": "products_image/IMG_20241128_045112.jpg",
+            "categories_id": 4
+        }
+    },
+    {
+        "pk": 17,
+        "model": "v1.products",
+        "fields": { 
+            "products_name": "Doraemon Vol 6",
+            "products_price": 250000,
+            "products_stock": 5000,
+            "products_desc": "Komik manga jepang yang mengisahkan robot kucing dari abad 22",
+            "products_image": "products_image/IMG_20241128_045142.jpg",
+            "categories_id": 4
+        }
+    },
+    {
+        "pk": 18,
+        "model": "v1.products",
+        "fields": { 
+            "products_name": "The Federal Reserve System",
+            "products_price": 475426.26,
+            "products_stock": 5000,
+            "products_desc": "Federal Reserve System (FRS) adalah bank sentral Amerika Serikat yang dikenal dengan sebutan The Fed. Bank sentral adalah lembaga keuangan yang diberikan kontrol istimewa atas produksi dan distribusi uang dan kredit untuk suatu negara atau sekelompok negara",
+            "products_image": "products_image/IMG_20241128_045228.jpg",
+            "categories_id": 2
+        }
+    },
+    {
+        "pk": 19,
+        "model": "v1.products",
+        "fields": { 
+            "products_name": "Book Of The Fallen",
+            "products_price": 682423.2,
+            "products_stock": 5000,
+            "products_desc": "Satanic theory, ethics, and practice. The Satanic community has historically been plagued by division and conflict. Segregated along theological lines, Satanism as a whole has suffered a crisis of identity in the modern era",
+            "products_image": "products_image/IMG_20241128_045317.jpg",
+            "categories_id": 1
+        }
+    },
+    {
+        "pk": 20,
+        "model": "v1.products",
+        "fields": { 
+            "products_name": "Traditional Chinese Medicine",
+            "products_price": 412565.22,
+            "products_stock": 5000,
+            "products_desc": "Traditional Chinese medicine is one of the most renowned and most controversial scientific achievements of ancient Chinese civilisation",
+            "products_image": "products_image/IMG_20241128_050556.jpg",
+            "categories_id": 7
+        }
+    },
+    {
+        "pk": 21,
+        "model": "v1.products",
+        "fields": { 
+            "products_name": "So Much Things To Say",
+            "products_price": 383357.06,
+            "products_stock": 5000,
+            "products_desc": "The oral history of Bob Marley",
+            "products_image": "products_image/IMG_20241128_050623.jpg",
+            "categories_id": 4
+        }
+    },
+    {
+        "pk": 22,
+        "model": "v1.products",
+        "fields": { 
+            "products_name": "For Anonymous",
+            "products_price": 253825.24,
+            "products_stock": 5000,
+            "products_desc": "How a mysterious hacker collective transformed the world",
+            "products_image": "products_image/IMG_20241128_050646.jpg",
+            "categories_id": 5
+        }
+    },
+    {
+        "pk": 23,
+        "model": "v1.products",
+        "fields": { 
+            "products_name": "The Illuminati",
+            "products_price": 598291.01,
+            "products_stock": 5000,
+            "products_desc": "The secret society that hijacked the world",
+            "products_image": "products_image/IMG_20241128_050723.jpg",
+            "categories_id": 1
+        }
+    },
+    {
+        "pk": 24,
+        "model": "v1.products",
+        "fields": { 
+            "products_name": "MIT Mossad CIA Gladio",
+            "products_price": 68638.33,
+            "products_stock": 5000,
+            "products_desc": "Sebuah buku yang membahas dan memproses aktivitas kerja menakjubkan dari organisasi spionase (intelijen) terbesar di dunia",
+            "products_image": "products_image/IMG_20241128_052800.jpg",
+            "categories_id": 4
+        }
+    },
+    {
+        "pk": 25,
+        "model": "v1.products",
+        "fields": { 
+            "products_name": "Advanced Technologies In Modern Robotics Applictions",
+            "products_price": 1674072.39,
+            "products_stock": 5000,
+            "products_desc": "Presents in a systematic manner the advanced technologies used for various modern robot applications",
+            "products_image": "products_image/IMG_20241128_052835.jpg",
+            "categories_id": 3
+        }
+    },
+    {
+        "pk": 26,
+        "model": "v1.products",
+        "fields": { 
+            "products_name": "Sundaland",
+            "products_price": 158584.77,
+            "products_stock": 5000,
+            "products_desc": "The history of the asian landmass that started sinking after the ice age",
+            "products_image": "products_image/IMG_20241128_052901.jpg",
+            "categories_id": 5
+        }
+    },
+    {
+        "pk": 27,
+        "model": "v1.products",
+        "fields": { 
+            "products_name": "Interstellar Space Journey",
+            "products_price": 82599.74,
+            "products_stock": 5000,
+            "products_desc": "A book about interstellar space exploration can help them see how wondrous the idea is for mankind",
+            "products_image": "products_image/IMG_20241128_054737.jpg",
+            "categories_id": 4
+        }
+    },
+    {
+        "pk": 28,
+        "model": "v1.products",
+        "fields": { 
+            "products_name": "Relativity",
+            "products_price": 195563.66,
+            "products_stock": 5000,
+            "products_desc": "The Special & General Theory",
+            "products_image": "products_image/IMG_20241128_054810.jpg",
+            "categories_id": 5
+        }
+    },
+    {
+        "pk": 29,
+        "model": "v1.products",
+        "fields": { 
+            "products_name": "Jazz Styles",
+            "products_price": 104839.89,
+            "products_stock": 5000,
+            "products_desc": "History jazz and music analysis",
+            "products_image": "products_image/IMG_20241128_054828.jpg",
+            "categories_id": 2
+        }
+    },
+    {
+        "pk": 30,
+        "model": "v1.products",
+        "fields": { 
+            "products_name": "Perjuangan Mempertahankan Kemerdekaan Indonesia",
+            "products_price": 72000.00,
+            "products_stock": 5000,
+            "products_desc": "Perjuangan rakyat Indonesia tidak berhenti setelah proklamasi kemerdekaan. Para penjajah yang masih ingin merebut Indonesia, membuat rakyat bersatu untuk mempertahankan kemerdekaan",
+            "products_image": "products_image/IMG_20241128_054846.jpg",
+            "categories_id": 1
+        }
+    }
+]
