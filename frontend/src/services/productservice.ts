@@ -9,5 +9,5 @@ class ProductService {
     return api.get(`/products/${id}`);
   }
 }
-
+// eslint-disable-next-line import/no-anonymous-default-export
 export default new ProductService();

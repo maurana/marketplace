@@ -32,35 +32,39 @@ export default function Page() {
   const [Product, setProduct] = useState([]);
   const [Categories, setCategories] = useState([]);
 
-  const pList = () => {
+  const pList = async () => {
     const params:string=`rows=${Rows}&keywords=${Keywords}&categories=${KeyCategories.categories}`;
-    ProductService.getList(params, Pages)
+    await ProductService.getList(params, Pages)
             .then(res => setProduct(res.data.data.rows))
             .catch(e => console.log(e));
   }
 
-  const cList = () => {
-    CategoriesService.getList()
+  const cList = async () => {
+    await CategoriesService.getList()
             .then(res => setCategories(res.data.data))
             .catch(e =>  console.log(e));
   }
 
   const handleInputChange = useCallback((e: React.FormEvent<HTMLInputElement>) => {
     setKeywords(e.currentTarget.value);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [Keywords]);
 
   const handleSelectChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
     setKeyCategories({ ...KeyCategories, [e.target.name]: e.target.value.trim() });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [KeyCategories]);
 
   const handleClick = useCallback(() => {
     pList()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [Keywords, KeyCategories]);
 
   useEffect(() => {
-    pList();
-    cList();
-  }, [Keywords, Categories, Rows])
+    if (Object.keys(Product).length < 1 && Keywords.length == 0 && KeyCategories.categories == '') pList();
+    if (Object.keys(Categories).length < 1) cList();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [Keywords, Categories, Rows, Product, Categories])
 
     return (
       <main>

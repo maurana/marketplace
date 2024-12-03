@@ -1,10 +1,11 @@
 "use client"
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   Pagination, Card, Modal, Table, TableBody, TableCell, 
   TableHead, TableHeadCell, TableRow, Select, TextInput, Button,
 } from "flowbite-react";
+import { MdAnnouncement } from 'react-icons/md';
 import { RiUserSearchLine } from "react-icons/ri";
 import { HiCubeTransparent } from "react-icons/hi";
 import HeadNav from "@/components/headnav";
@@ -39,25 +40,59 @@ export default function Page() {
   const [openModal, setOpenModal] = useState(false);
   const [modalPlacement] = useState('top-center')
 
-  const onPageChange = (page: number) => {
-    setCurrentPage(page);
-    oList();
+  const onPageChange = async (page: number) => {
+    const params: string = `rows=${Rows.rows}&keywords=${Keywords}`;
+    await OrderService.getList(params, page)
+            .then(res => {
+              setCurrentPage(page);
+              setOrder(res.data.data.rows)
+              setTotalPage(res.data.data.total_page)
+            })
+            .catch(e =>  console.log(e));
   }
 
-  const handleInputChange = useCallback((e: React.FormEvent<HTMLInputElement>) => {
-    setKeywords(e.currentTarget.value);
-    oList();
-  }, [Keywords]);
+  const debounce = (onChange: ReturnType<typeof Function>) => {
+    let timeout: ReturnType<typeof setTimeout>;
+    return (e: React.FormEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => {
+      const val: string = e.currentTarget.value;
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        onChange(val);
+      }, 0);
+    };
+  };
 
-  const handleSelectChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
-    setRows({ ...Rows, [e.target.name]: e.target.value.trim() });
-    oList();
-  }, [Rows]);
+  const handleSearch = async (val: string, name: string) => {
+    let params: string = '';
+    try {
+      switch(name) {
+        case 'keywords': {
+          params = `rows=${Rows.rows}&keywords=${val}`
+          break;
+        }
+        case 'rows': {
+          val = val.trim();
+          params = `rows=${val}&keywords=${Keywords}`
+          break;
+        }
+      }
+
+      await OrderService.getList(params, currentPage)
+              .then(res => {
+                setOrder(res.data.data.rows)
+                setTotalPage(res.data.data.total_page)
+                if (name == 'rows') setRows({ ...Rows, [name as string]: val})
+                else setKeywords(val)
+              })
+              .catch(e =>  console.log(e));
+    } catch (error: unknown) {
+      console.error("Error fetching data:", error);
+    }
+  }
   
-
-  const oList = () => {
+  const oList = async () => {
     const params: string = `rows=${Rows.rows}&keywords=${Keywords}`;
-    OrderService.getList(params, currentPage)
+    await OrderService.getList(params, currentPage)
             .then(res => {
               setOrder(res.data.data.rows)
               setTotalPage(res.data.data.total_page)
@@ -65,16 +100,17 @@ export default function Page() {
             .catch(e =>  console.log(e));
   }
 
-  const oiList = (id: number) => {
+  const oiList = async (id: number) => {
     const params: string = `orders=${id}`;
-    OrderItemService.getListByOrder(params)
+    await OrderItemService.getListByOrder(params)
             .then(res => setOrderItem(res.data.data))
             .catch(e => console.log(e));
   }
 
   useEffect(() => {
-    oList();
-  }, [Keywords, Rows, currentPage])
+    if (Object.keys(Order).length < 1 && Keywords.length == 0) oList()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [Keywords, Rows, currentPage, Order])
 
   const onListModal = (orders_id: number) => {
     setOpenModal(true)
@@ -88,10 +124,10 @@ export default function Page() {
         <Card className="w-full">
           <div className="max-w-sm inline-flex gap-2">
             <span>
-              <TextInput onChange={handleInputChange} value={Keywords} id="keywords" name="keywords" type="text" icon={RiUserSearchLine} placeholder="search.." />
+              <TextInput onChange={debounce((e: string) => handleSearch(e, 'keywords'))} value={Keywords} id="keywords" name="keywords" type="text" icon={RiUserSearchLine} placeholder="search.." />
             </span>
             <span>
-              <Select ref={rows} onChange={handleSelectChange} value={Rows.rows} id="rows" className="w-20" name="rows">
+              <Select ref={rows} onChange={debounce((e: string) => handleSearch(e, 'rows'))} value={Rows.rows} id="rows" className="w-20" name="rows">
                 <option value={2}>2</option>
                 <option value={5}>5</option>
                 <option value={10}>10</option>
@@ -129,7 +165,21 @@ export default function Page() {
                     </TableCell>
                   </TableRow>
                   )
-                }): null }
+                }):  
+                <TableRow className="text-center bg-white dark:border-gray-700 dark:bg-gray-800">
+                <TableCell colSpan={7} rowSpan={1}>
+                  <div className="flex w-full justify-between mt-5">
+                  <div className="mx-auto flex items-center">
+                    <p className="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
+                      <MdAnnouncement className="mr-4 h-4 w-4" />
+                      <span className="[&_p]:inline">
+                        NO DATA ORDERS
+                      </span>
+                    </p>
+                  </div>
+                </div>
+                </TableCell>
+                </TableRow> }
               </TableBody> 
             </Table>
           </div>
