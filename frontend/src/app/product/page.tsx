@@ -60,7 +60,7 @@ export default function Page() {
   useEffect(() => {
     pList();
     cList();
-  }, [])
+  }, [Keywords, Categories, Rows])
 
     return (
       <main>

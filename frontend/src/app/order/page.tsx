@@ -74,7 +74,7 @@ export default function Page() {
 
   useEffect(() => {
     oList();
-  }, [])
+  }, [Keywords, Rows, currentPage])
 
   const onListModal = (orders_id: number) => {
     setOpenModal(true)
