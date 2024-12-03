@@ -26,10 +26,19 @@ class ProductsList(APIView):
                 Categories.objects.filter(
                     categories_id=OuterRef('categories_id'))
                     .order_by('categories_id')
-                    .values('categories_name')[:1])).filter(
-                        Q(products_name__icontains=keywords) and 
+                    .values('categories_name')[:1]))
+        
+        if keywords != '' and categories == '':
+            base_qs = base_qs.filter(Q(products_name__icontains=keywords))
+
+        if categories != '' and keywords == '':
+            base_qs = base_qs.filter(Q(categories_name__icontains=categories))
+
+        if keywords != '' and categories != '':
+            base_qs = base_qs.filter(
+                        Q(products_name__icontains=keywords) or 
                         Q(categories_name__icontains=categories))
-    
+
         return base_qs
 
     def get(self, request, format=None):
