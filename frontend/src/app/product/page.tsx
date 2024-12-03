@@ -5,8 +5,8 @@ import { Button, TextInput, Select, Card } from 'flowbite-react';
 import { HiOutlineSearchCircle, HiArrowRight } from 'react-icons/hi';
 import { MdAnnouncement } from 'react-icons/md';
 import HeadNav from '@/components/headnav';
-import ProductService from '@/services/productservice'
-import CategoriesService from '@/services/categoriesservice'
+import ProductService from '@/services/productservice';
+import CategoriesService from '@/services/categoriesservice';
 
 interface ITypeCategories {
   categories_id: number,

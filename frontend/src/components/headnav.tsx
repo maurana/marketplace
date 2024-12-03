@@ -5,7 +5,7 @@ import {
   NavbarCollapse,
   NavbarLink,
   NavbarToggle
-} from "flowbite-react";
+} from 'flowbite-react';
 
 export default function HeadNav() {
   return (

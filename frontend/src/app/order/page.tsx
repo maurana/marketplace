@@ -8,7 +8,7 @@ import {
 import { RiUserSearchLine } from "react-icons/ri";
 import { HiCubeTransparent } from "react-icons/hi";
 import HeadNav from "@/components/headnav";
-import OrderService from '@/services/orderservice'
+import OrderService from '@/services/orderservice';
 import OrderItemService from "@/services/orderitemservice";
 
 interface ITypeOrder {
